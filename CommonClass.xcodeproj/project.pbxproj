@@ -15,6 +15,7 @@
 		8EF0407C1F505DAA00080748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF0407A1F505DAA00080748 /* LaunchScreen.storyboard */; };
 		8EF040871F505DAA00080748 /* CommonClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF040861F505DAA00080748 /* CommonClassTests.m */; };
 		8EF040921F505DAA00080748 /* CommonClassUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF040911F505DAA00080748 /* CommonClassUITests.m */; };
+		8EF040A21F505E2900080748 /* UIImage+CommonExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF040A11F505E2900080748 /* UIImage+CommonExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8EF0408D1F505DAA00080748 /* CommonClassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonClassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF040911F505DAA00080748 /* CommonClassUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonClassUITests.m; sourceTree = "<group>"; };
 		8EF040931F505DAA00080748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EF040A01F505E2900080748 /* UIImage+CommonExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CommonExtension.h"; sourceTree = "<group>"; };
+		8EF040A11F505E2900080748 /* UIImage+CommonExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CommonExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		8EF0406B1F505DAA00080748 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				8EF0409F1F505DF200080748 /* Extension */,
 				8EF0406F1F505DAA00080748 /* AppDelegate.h */,
 				8EF040701F505DAA00080748 /* AppDelegate.m */,
 				8EF040721F505DAA00080748 /* ViewController.h */,
@@ -138,6 +142,15 @@
 				8EF040931F505DAA00080748 /* Info.plist */,
 			);
 			path = CommonClassUITests;
+			sourceTree = "<group>";
+		};
+		8EF0409F1F505DF200080748 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EF040A01F505E2900080748 /* UIImage+CommonExtension.h */,
+				8EF040A11F505E2900080748 /* UIImage+CommonExtension.m */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +289,7 @@
 				8EF040741F505DAA00080748 /* ViewController.m in Sources */,
 				8EF040711F505DAA00080748 /* AppDelegate.m in Sources */,
 				8EF0406E1F505DAA00080748 /* main.m in Sources */,
+				8EF040A21F505E2900080748 /* UIImage+CommonExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
