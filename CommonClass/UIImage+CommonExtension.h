@@ -13,5 +13,7 @@
 //切圆角
 - (UIImage *)circleImage;
 
+//根据颜色返回图片
++ (instancetype)bl_imageWithColor:(UIColor *)color;
 
 @end

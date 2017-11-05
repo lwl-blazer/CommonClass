@@ -15,6 +15,7 @@
 		8E7CA0AA1FAD72F000FBCA2A /* UIView+BLExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7CA0A91FAD72F000FBCA2A /* UIView+BLExtention.m */; };
 		8E7CA0AD1FAD7ED200FBCA2A /* BLCustomeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7CA0AC1FAD7ED200FBCA2A /* BLCustomeAlertView.m */; };
 		8EC37A8D1F58473A006C0983 /* SvTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC37A8C1F58473A006C0983 /* SvTestObject.m */; };
+		8EED2AE81FAE9349002AC35D /* NSString+BLCommonExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EED2AE71FAE9349002AC35D /* NSString+BLCommonExtention.m */; };
 		8EF0406E1F505DAA00080748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0406D1F505DAA00080748 /* main.m */; };
 		8EF040711F505DAA00080748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF040701F505DAA00080748 /* AppDelegate.m */; };
 		8EF040741F505DAA00080748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF040731F505DAA00080748 /* ViewController.m */; };
@@ -61,6 +62,8 @@
 		8E7CA0AC1FAD7ED200FBCA2A /* BLCustomeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCustomeAlertView.m; sourceTree = "<group>"; };
 		8EC37A8B1F58473A006C0983 /* SvTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvTestObject.h; sourceTree = "<group>"; };
 		8EC37A8C1F58473A006C0983 /* SvTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvTestObject.m; sourceTree = "<group>"; };
+		8EED2AE61FAE9349002AC35D /* NSString+BLCommonExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BLCommonExtention.h"; sourceTree = "<group>"; };
+		8EED2AE71FAE9349002AC35D /* NSString+BLCommonExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BLCommonExtention.m"; sourceTree = "<group>"; };
 		8EF040691F505DAA00080748 /* CommonClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF0406D1F505DAA00080748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8EF0406F1F505DAA00080748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				8E2C0D451F6982820070F93C /* NSObject+KVO.m */,
 				8E7CA0A81FAD72F000FBCA2A /* UIView+BLExtention.h */,
 				8E7CA0A91FAD72F000FBCA2A /* UIView+BLExtention.m */,
+				8EED2AE61FAE9349002AC35D /* NSString+BLCommonExtention.h */,
+				8EED2AE71FAE9349002AC35D /* NSString+BLCommonExtention.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				8E2C0D461F6982820070F93C /* NSObject+KVO.m in Sources */,
 				8E7CA0AA1FAD72F000FBCA2A /* UIView+BLExtention.m in Sources */,
 				8EC37A8D1F58473A006C0983 /* SvTestObject.m in Sources */,
+				8EED2AE81FAE9349002AC35D /* NSString+BLCommonExtention.m in Sources */,
 				8E2C0D3D1F6973160070F93C /* Person.m in Sources */,
 				8E7CA0AD1FAD7ED200FBCA2A /* BLCustomeAlertView.m in Sources */,
 				8EF040741F505DAA00080748 /* ViewController.m in Sources */,
