@@ -161,4 +161,20 @@
 }
 
 
+- (void)gcdDemo5{
+    dispatch_queue_t q = dispatch_queue_create("AllQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    void (^task) () = ^{
+        dispatch_sync(q, ^{
+            
+        });
+        
+        dispatch_async(q, ^{
+            
+        });
+    };
+    
+    dispatch_async(q, task);
+}
+
 @end
