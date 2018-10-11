@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E2B9C39216FA947000A3AD3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B9C38216FA947000A3AD3 /* TableViewController.m */; };
+		8E2B9C3F216FAF71000A3AD3 /* UITableView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */; };
 		8E2C0D3D1F6973160070F93C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C0D3C1F6973160070F93C /* Person.m */; };
 		8E2C0D401F697A970070F93C /* NSObject+Sum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C0D3F1F697A970070F93C /* NSObject+Sum.m */; };
 		8E2C0D431F697B080070F93C /* SumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C0D421F697B080070F93C /* SumManager.m */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E2B9C37216FA947000A3AD3 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8E2B9C38216FA947000A3AD3 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Placeholder.m"; sourceTree = "<group>"; };
+		8E2B9C3E216FAF71000A3AD3 /* UITableView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Placeholder.h"; sourceTree = "<group>"; };
 		8E2C0D3B1F6973160070F93C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		8E2C0D3C1F6973160070F93C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		8E2C0D3E1F697A970070F93C /* NSObject+Sum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sum.h"; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 		8EF0406B1F505DAA00080748 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				8E2B9C3E216FAF71000A3AD3 /* UITableView+Placeholder.h */,
+				8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */,
 				8EF0409F1F505DF200080748 /* Extension */,
 				8EF0406F1F505DAA00080748 /* AppDelegate.h */,
 				8EF040701F505DAA00080748 /* AppDelegate.m */,
@@ -154,6 +162,8 @@
 				8EFB62111F72B69B00079133 /* CFRunLoopController.m */,
 				8E7CA0AB1FAD7ED200FBCA2A /* BLCustomeAlertView.h */,
 				8E7CA0AC1FAD7ED200FBCA2A /* BLCustomeAlertView.m */,
+				8E2B9C37216FA947000A3AD3 /* TableViewController.h */,
+				8E2B9C38216FA947000A3AD3 /* TableViewController.m */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -339,6 +349,7 @@
 				8E38811A1F5711E600D2C636 /* EOCView.m in Sources */,
 				8E2C0D401F697A970070F93C /* NSObject+Sum.m in Sources */,
 				8E2C0D461F6982820070F93C /* NSObject+KVO.m in Sources */,
+				8E2B9C3F216FAF71000A3AD3 /* UITableView+Placeholder.m in Sources */,
 				8E7CA0AA1FAD72F000FBCA2A /* UIView+BLExtention.m in Sources */,
 				8EC37A8D1F58473A006C0983 /* SvTestObject.m in Sources */,
 				8EED2AE81FAE9349002AC35D /* NSString+BLCommonExtention.m in Sources */,
@@ -349,6 +360,7 @@
 				8EF0406E1F505DAA00080748 /* main.m in Sources */,
 				8E2C0D431F697B080070F93C /* SumManager.m in Sources */,
 				8EFB62121F72B69B00079133 /* CFRunLoopController.m in Sources */,
+				8E2B9C39216FA947000A3AD3 /* TableViewController.m in Sources */,
 				8EF040A21F505E2900080748 /* UIImage+CommonExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
