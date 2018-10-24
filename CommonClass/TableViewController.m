@@ -7,10 +7,15 @@
 //
 
 #import "TableViewController.h"
+#import "TableViewCell.h"
+#import "BLCustomActionSheet.h"
 
 @interface TableViewController ()
 
 @property(nonatomic, copy) NSArray *dataArr;
+
+@property(nonatomic, copy) BLCustomActionSheet *sheet;
+
 
 @end
 
@@ -19,11 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.dataArr = @[@"1", @"2", @"3"];
+    self.dataArr = @[@"1", @"2", @"3", @"4", @"5"];
     
     UIView *head = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100)];
     head.backgroundColor = [UIColor redColor];
     self.tableView.tableHeaderView = head;
+    
+    [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"cell"];
     
     [self.tableView reloadData];
 }
@@ -40,15 +47,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArr.count;
+    return 100;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    /*UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
  
-    cell.textLabel.text = @"1111";
+    cell.textLabel.text = @"1111";*/
+    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    [cell refreshData:indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.sheet showCustomActionSheet];
+}
+- (BLCustomActionSheet *)sheet{
+    if (!_sheet) {
+        _sheet = [[BLCustomActionSheet alloc] init];
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
+        bgView.backgroundColor = [UIColor redColor];
+        _sheet.contentView = bgView;
+        _sheet.supView = self.view;
+        
+    }
+    return _sheet;
 }
 
 
