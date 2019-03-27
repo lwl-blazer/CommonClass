@@ -1,10 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target :'CommonClass' do
-    
-
     pod 'Masonry'
-
+    pod 'GoogleWebRTC'
 end

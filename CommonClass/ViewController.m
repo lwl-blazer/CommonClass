@@ -25,6 +25,10 @@
 #import "NSObject+Sum.h"
 #import "NSObject+KVO.h"
 
+#import <Masonry/Masonry.h>
+
+
+
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
     NSPort *_port;
@@ -32,15 +36,19 @@
 
 @property(nonatomic, strong) Person *p;
 
+@property(nonatomic, strong) UIView *subView;
+@property(nonatomic, strong) UILabel *label1;
+@property(nonatomic, strong) UILabel *label2;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    _eocView = [[EOCView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.view.backgroundColor = [UIColor redColor];
+    [self createLabel];
+    /*_eocView = [[EOCView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [self.view addSubview:_eocView];
     
     
@@ -70,7 +78,63 @@
 //    [p addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
     [p bl_addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
     
-    _p = p;
+    _p = p;*/
+
+    
+}
+
+- (void)createLabel{
+    self.subView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:self.subView];
+    [self.subView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(100);
+        make.leading.trailing.mas_offset(0);
+        make.height.mas_offset(100);
+    }];
+    
+    
+    self.label1 = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.label1.text = @"出发地";
+    self.label1.textColor = [UIColor whiteColor];
+    [self.subView addSubview:self.label1];
+    
+    self.label2 = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.label2.text = @"目的地";
+    self.label2.textColor = [UIColor whiteColor];
+   
+    self.label2.textAlignment = NSTextAlignmentRight;
+    [self.subView addSubview:self.label2];
+    
+    [self.label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_offset(20);
+        make.height.mas_offset(30);
+        make.centerY.mas_equalTo(self.subView.mas_centerY);
+        make.width.mas_offset(200);
+    }];
+    
+    [self.label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_offset(-20);
+        make.height.mas_offset(30);
+        make.centerY.mas_equalTo(self.subView.mas_centerY);
+        make.width.mas_offset(200);
+    }];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [self.subView addSubview:btn];
+    [btn addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.subView.mas_centerX);
+        make.bottom.mas_offset(0);
+        make.size.mas_equalTo(CGSizeMake(20, 20));
+    }];
+}
+
+- (void)buttonAction{
+    
+    CGFloat margin = self.label2.frame.origin.x - self.label1.frame.origin.x;
+    NSLog(@"%lf", margin);
+    
+    self.label1.transform = CGAffineTransformTranslate(self.label1.transform, margin, 0);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{

@@ -10,6 +10,9 @@
 #import "TableViewCell.h"
 #import "BLCustomActionSheet.h"
 
+#import "BLActionSheetViewController.h"
+#import "ActionSheetViewController.h"
+
 @interface TableViewController ()
 
 @property(nonatomic, copy) NSArray *dataArr;
@@ -66,7 +69,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.sheet showCustomActionSheet];
+   // [self.sheet showCustomActionSheet];
+    
+    ActionSheetViewController *sheet = [[ActionSheetViewController alloc] init];
+    
+    BLActionSheetViewController *action = [[BLActionSheetViewController alloc] initWithPresentedViewController:sheet presentingViewController:self];
+    sheet.transitioningDelegate = action;
+    [self presentViewController:sheet animated:YES completion:NULL];
+    
+    
 }
 - (BLCustomActionSheet *)sheet{
     if (!_sheet) {
