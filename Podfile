@@ -4,5 +4,4 @@ use_frameworks!
 
 target :'CommonClass' do
     pod 'Masonry'
-    pod 'GoogleWebRTC'
 end

@@ -1,20 +1,16 @@
 PODS:
-  - GoogleWebRTC (1.1.27121)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - GoogleWebRTC
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - GoogleWebRTC
     - Masonry
 
 SPEC CHECKSUMS:
-  GoogleWebRTC: 888ae9f8e90d46734134f3e74ba15afdf72ff622
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: f0eed49a639bac18450d8dac4f2930664fa7b846
+PODFILE CHECKSUM: c7d505f3b2f1c388446881a98cc79574f6350146
 
 COCOAPODS: 1.5.3
