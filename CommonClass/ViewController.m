@@ -26,8 +26,7 @@
 #import "NSObject+KVO.h"
 
 #import <Masonry/Masonry.h>
-
-
+#import "BLRangeSlider.h"
 
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
@@ -47,7 +46,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
-    [self createLabel];
+    
+    BLRangeSlider *slider = [[BLRangeSlider alloc] initWithFrame:CGRectMake(20, 100, 500, 30)];
+    slider.minValue = 0;
+    slider.maxValue = 1000;
+    [self.view addSubview:slider];
+    
+    //[self createLabel];
+    
+    
+   // [[BLPingService sharedManager] startPingHost:@"www.baidu.com" packetCount:10 resultHandler:nil];
+    
+//    [[PhoneNetManager shareInstance] netStartPing:@"www.baidu.com" packetCount:10 pingResultHandler:^(NSString * _Nullable pingres) {
+//        NSLog(@"----%@", pingres);
+//    }];
+    
+    
     /*_eocView = [[EOCView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [self.view addSubview:_eocView];
     
