@@ -27,6 +27,7 @@
 
 #import <Masonry/Masonry.h>
 #import "BLRangeSlider.h"
+#import "HotelDetailFilterItemView.h"
 
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
@@ -39,6 +40,8 @@
 @property(nonatomic, strong) UILabel *label1;
 @property(nonatomic, strong) UILabel *label2;
 
+@property(nonatomic, strong) HotelDetailFilterItemView *itemView;
+
 @end
 
 @implementation ViewController
@@ -47,11 +50,24 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
+    self.itemView = [[HotelDetailFilterItemView alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 40) buttons:@[@"企业付",
+                                                                                                                                                             @"在线付",
+                                                                                                                                                             @"含早餐",
+                                                                                                                                                             @"协议型",
+                                                                                                                                                             @"有窗",
+                                                                                                                                                             @"可退订",
+                                                                                                                                                             @"可退订",
+                                                                                                                                                             @"协议型",
+                                                                                                                                @"含早餐"]];
+    
+    [self.view addSubview:self.itemView];
+    
+    /*
     BLRangeSlider *slider = [[BLRangeSlider alloc] initWithFrame:CGRectMake(20, 100, 500, 30)];
     slider.minValue = 0;
     slider.maxValue = 1000;
     [self.view addSubview:slider];
-    
+    */
     //[self createLabel];
     
     
@@ -75,8 +91,7 @@
     _port.delegate = self;
     [[NSRunLoop currentRunLoop] addPort:_port forMode:NSRunLoopCommonModes];
 
-    
-    
+
 //    将block当做方法的返回值, 完成简单的链式语法
     Person *p = [[Person alloc] init];
     p.run(20).eat.run(10).eat.eat.run(12);
@@ -93,9 +108,12 @@
     [p bl_addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
     
     _p = p;*/
-
-    
 }
+
+- (IBAction)insertAction:(id)sender {
+    [self.itemView insertSelectFilterItemWithIndex:0 itemName:@"可退订"];
+}
+
 
 - (void)createLabel{
     self.subView = [[UIView alloc] initWithFrame:CGRectZero];

@@ -27,36 +27,41 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.selectImage = [UIImage imageNamed:@"blue_triangle"];
-        self.borderNoSelectColor = SMARTAlphaGrayColor(170, 209, 255, 1).CGColor;
-        self.borderSelectColor = UICOLOR_1fa5ff.CGColor;
+        self.borderNoSelectColor =  [UIColor colorWithRed:170/255.0
+                                                    green:209/255.0
+                                                     blue:255/255.0
+                                                    alpha:1.0].CGColor;
+        self.borderSelectColor = [UIColor blueColor].CGColor;
         [self createContentView];
     }
     return self;
 }
 
 - (void)createContentView{
-    self.contentView.backgroundColor = SMARTAlphaGrayColor(237, 243, 251, 1.0);
+    self.contentView.backgroundColor = [UIColor colorWithRed:237/255.0
+                                                       green:243/255.0
+                                                        blue:251/255.0
+                                                       alpha:1.0];
     
     self.backView = [[UIView alloc] initWithFrame:CGRectZero];
     self.backView.backgroundColor = [UIColor whiteColor];
-    self.backView.layer.cornerRadius = RATENUM(5);
+    self.backView.layer.cornerRadius = 5;
     self.backView.layer.borderColor = self.borderNoSelectColor;
     self.backView.layer.borderWidth = 0.5;
     [self.contentView addSubview:self.backView];
     [self.backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(RATENUM(8), RATENUM(1), RATENUM(8), RATENUM(1)));
-        make.height.mas_offset(RATENUM(24));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(8, 1, 8, 1));
+        make.height.mas_offset(24);
     }];
     
-    self.label = [UILabel createLabelWithFontSize:[UIFont creatPingFangSCRegularWithSize:RATENUM(14)]
-                                        textColor:UICOLOR_1fa5ff
-                                             text:@""
-                                            align:NSTextAlignmentCenter];
-    
+    self.label = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.label.font = [UIFont systemFontOfSize:14];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.textColor = [UIColor blueColor];
     [self.backView addSubview:self.label];
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, RATENUM(8), 0, RATENUM(8)));
-        make.width.mas_lessThanOrEqualTo(RATENUM(50));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 8, 0, 8));
+        make.width.mas_lessThanOrEqualTo(50);
     }];
     
     self.selectImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
@@ -78,6 +83,21 @@
             self.selectImageView.hidden = YES;
         }
     }
+}
+
+
+
+
+- (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
+    UICollectionViewLayoutAttributes *attributes = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
+        CGRect rect = [self.label.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 24.0)
+                                                    options:NSStringDrawingTruncatesLastVisibleLine|  NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:@{NSFontAttributeName: self.label.font}
+                                                    context:nil];
+        rect.size.width +=8;
+        rect.size.height+=8;
+        attributes.frame = rect;
+        return attributes;
 }
 
 @end

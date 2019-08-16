@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithFrame:(CGRect)frame buttons:(NSArray <NSString *>*)buttons;
 
+- (void)insertSelectFilterItemWithIndex:(NSInteger)row itemName:(NSString *)name;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,7 +9,7 @@
 
 #import "BLPingService.h"
 
-@interface BLPingService ()<PhonePingDelegate>
+@interface BLPingService ()
 
 @property (nonatomic,strong) NSMutableDictionary *pingResDic;
 
@@ -70,7 +70,7 @@
         } catch (NSException *exception) {
             log4cplus_warn("PhoneNetPing", "func: %s, exception info: %s , line: %d",__func__,[exception.description UTF8String],__LINE__);
         }*/
-    }
+    /*}
     
     if (pingItems) {
         [self.pingResDic setObject:pingItems forKey:host];
@@ -103,7 +103,7 @@
 
 - (void)pingResultWithUCPing:(PhonePing *)ucPing pingResult:(PPingResModel *)pingRes pingStatus:(PhoneNetPingStatus)status{
     
-    
+    */
     /*
     NSString *pingDetail = [NSString stringWithFormat:@"%d bytes form %@: icmp_seq=%d ttl=%d time=%.3fms",(int)pingRes.dateBytesLength,pingRes.IPAddress,(int)pingRes.ICMPSequence,(int)pingRes.timeToLive,pingRes.timeMilliseconds];
     
@@ -120,7 +120,7 @@
             NSLog(@"------%@", pingDetail);
             break;
     }
-*/
+*//*
     [self addPingResToPingResContainer:pingRes andHost:pingRes.IPAddress];
     
     if (status == PhoneNetPingStatusFinished) {
@@ -130,5 +130,6 @@
     NSString *pingDetail = [NSString stringWithFormat:@"%d bytes form %@: icmp_seq=%d ttl=%d time=%.3fms",(int)pingRes.dateBytesLength,pingRes.IPAddress,(int)pingRes.ICMPSequence,(int)pingRes.timeToLive,pingRes.timeMilliseconds];
     NSLog(@"pingDetail:%@", pingDetail);
 }
+*/
 
 @end

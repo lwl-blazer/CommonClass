@@ -9,6 +9,7 @@
 #import <Masonry/Masonry.h>
 
 #import "HotelDetailFilterItemCell.h"
+#import "HotelDetailFilterItemLayout.h"
 
 @interface HotelDetailFilterItemView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -75,6 +76,15 @@
     }];
 }
 
+- (void)insertSelectFilterItemWithIndex:(NSInteger)row itemName:(nonnull NSString *)name{
+    [self.datas insertObject:@{@"name":name,
+                               @"select": [NSNumber numberWithBool:YES]
+                               } atIndex:0];
+    [self.collectView performBatchUpdates:^{
+        [self.collectView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]]];
+    } completion:NULL];
+}
+
 #pragma mark -- init
 
 - (NSMutableArray *)datas{
@@ -86,14 +96,17 @@
 
 - (UICollectionView *)collectView{
     if (!_collectView) {
-        UICollectionViewFlowLayout *layerout = [[UICollectionViewFlowLayout alloc] init];
-        layerout.minimumInteritemSpacing = RATENUM(8.0);
-        layerout.estimatedItemSize = CGSizeMake(RATENUM(60), RATENUM(40));
+        HotelDetailFilterItemLayout *layerout = [[HotelDetailFilterItemLayout alloc] init];
+        layerout.minimumInteritemSpacing = 8.0;
+        layerout.estimatedItemSize = CGSizeMake(60, 40);
         layerout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
         _collectView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                           collectionViewLayout:layerout];
-        _collectView.backgroundColor = SMARTAlphaGrayColor(237, 243, 251, 1.0);
+        _collectView.backgroundColor = [UIColor colorWithRed:237/255.0
+                                                       green:243/255.0
+                                                        blue:251/255.0
+                                                       alpha:1.0]; 
         _collectView.delegate = self;
         _collectView.dataSource = self;
         _collectView.showsHorizontalScrollIndicator = NO;
