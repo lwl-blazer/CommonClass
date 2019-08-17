@@ -85,19 +85,4 @@
     }
 }
 
-
-
-
-- (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-    UICollectionViewLayoutAttributes *attributes = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
-        CGRect rect = [self.label.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 24.0)
-                                                    options:NSStringDrawingTruncatesLastVisibleLine|  NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin
-                                                 attributes:@{NSFontAttributeName: self.label.font}
-                                                    context:nil];
-        rect.size.width +=8;
-        rect.size.height+=8;
-        attributes.frame = rect;
-        return attributes;
-}
-
 @end
