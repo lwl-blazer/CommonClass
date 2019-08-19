@@ -54,11 +54,7 @@
                                                                                                                                                              @"在线付",
                                                                                                                                                              @"含早餐",
                                                                                                                                                              @"协议型",
-                                                                                                                                                             @"有窗",
-                                                                                                                                                             @"可退订",
-                                                                                                                                                             @"可退订",
-                                                                                                                                                             @"协议型",
-                                                                                                                                @"含早餐"]];
+                                                                                                                                                             @"有窗"]];
     
     [self.view addSubview:self.itemView];
     
@@ -111,7 +107,7 @@
 }
 
 - (IBAction)insertAction:(id)sender {
-    [self.itemView insertSelectFilterItemWithIndex:0 itemName:@"可退订"];
+    [self.itemView insertSelectFilterItemWithIndex:0 itemName:@"300-1000"];
 }
 
 

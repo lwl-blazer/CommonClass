@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-pingResultWithUCPing:pingResult:pingStatus:"
-            landmarkType = "7">
+            landmarkName = "@implementation BLPingService"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
