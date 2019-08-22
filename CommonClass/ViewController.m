@@ -107,7 +107,18 @@
 }
 
 - (IBAction)insertAction:(id)sender {
-    [self.itemView insertSelectFilterItemWithIndex:0 itemName:@"300-1000"];
+    
+   NSArray *arr = @[@"不限",
+     @"150以下",
+     @"150-300",
+     @"300-600",
+     @"600-800",
+     @"800-1000",
+     @"1000以上"];
+    NSInteger i = arc4random() % 7;
+    NSLog(@"%@", arr[i]);
+    
+    [self.itemView insertSelectFilterItemWithIndex:0 itemName:arr[i]];
 }
 
 

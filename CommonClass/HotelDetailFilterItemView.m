@@ -27,7 +27,6 @@
 
 @implementation HotelDetailFilterItemView //h:40
 
-
 - (instancetype)initWithFrame:(CGRect)frame buttons:(NSArray <NSString *>*)buttons;
 {
     self = [super initWithFrame:frame];
@@ -72,7 +71,7 @@
     self.weakDic = self.datas[indexPath.row];
     NSString *name = [self.weakDic objectForKey:@"name"];
     CGFloat w =  [name boundingRectWithSize:CGSizeMake(MAXFLOAT, 24.0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]}
-                                    context:nil].size.width + 10;
+                                    context:nil].size.width + 20;
     return CGSizeMake(w, 40.0);
 }
 
@@ -89,9 +88,11 @@
                                } atIndex:0];
     [CATransaction setDisableActions:YES];
     [self.collectView performBatchUpdates:^{
-        [self.collectView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]]];
+        [self.collectView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]]];
     } completion:^(BOOL finished) {
         [CATransaction commit];
+        [self.selectIndexPaths insertObject:[NSIndexPath indexPathForRow:0 inSection:0] atIndex:0];
+        [self operationSelectIndexPathsIsRemovePath:nil];
     }];
 }
 
@@ -115,8 +116,10 @@
             }
             i ++;
         }
+        
+        [self operationSelectIndexPathsIsRemovePath:indexPath];
+
         if (row >= 0) {
-            [self.selectIndexPaths removeObjectAtIndex:indexPath.row];
             NSInteger location = 0; //存放的位置
             if(row > 0){
                 name = [self.oldDatas[row - 1] objectForKey:@"name"];
@@ -124,20 +127,15 @@
                 for (dic in self.datas) {
                     if ([dic[@"name"] isEqualToString:name]) {
                         if ([dic[@"select"] boolValue]) {
-                            location = 0;
+                            location = self.selectIndexPaths.count;
                         } else {
-                            location = i + 1;
+                            location = i;
                         }
                         break;
                     }
                     i++;
                 }
-            }
-            location = self.selectIndexPaths.count > 0 ? (self.selectIndexPaths.count - 1) + self.insertNumber + location : self.insertNumber + location;
-            
-            changePath = [NSIndexPath indexPathForRow:location inSection:0];
-            if (changePath.row != indexPath.row) {
-                [self collectionViewMoveItemAtIndexPath:indexPath toIndexPath:changePath];
+                changePath = [NSIndexPath indexPathForRow:location  inSection:0];
             }
         } else {
             [self collectionViewDeleteIndexPath:indexPath];
@@ -150,9 +148,10 @@
             changePath = [NSIndexPath indexPathForRow:0 inSection:0];
         }
         [self.selectIndexPaths addObject:changePath];
+        [self operationSelectIndexPathsIsRemovePath:nil];
     }
     
-    if (indexPath.row != changePath.row) {
+    if (changePath && indexPath.row != changePath.row) {
         [self collectionViewMoveItemAtIndexPath:indexPath toIndexPath:changePath];
     }
 }
@@ -189,6 +188,26 @@
     } completion:^(BOOL finished) {
         [CATransaction commit];
     }];
+}
+
+     - (void)operationSelectIndexPathsIsRemovePath:(NSIndexPath *)movePath {
+    if (self.selectIndexPaths.count <= 0) {
+        return;
+    }
+    if (movePath) {
+        for (NSIndexPath *path in self.selectIndexPaths) {
+            if (path.row == movePath.row) {
+                [self.selectIndexPaths removeObject:path];
+                break;
+            }
+        }
+    }
+    
+    for (NSInteger i = 0; i < self.selectIndexPaths.count; i ++) {
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i
+                                               inSection:0];
+        [self.selectIndexPaths replaceObjectAtIndex:i withObject:path];
+    }
 }
 
 #pragma mark -- init

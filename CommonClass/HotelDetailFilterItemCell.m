@@ -61,7 +61,6 @@
     [self.backView addSubview:self.label];
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 8, 0, 8));
-        make.width.mas_lessThanOrEqualTo(50);
     }];
     
     self.selectImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
