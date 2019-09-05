@@ -29,6 +29,9 @@
 #import "BLRangeSlider.h"
 #import "HotelDetailFilterItemView.h"
 
+#import "SMVerticalSegmentedControl.h"
+#import "BLVerticalSegmentControl.h"
+
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
     NSPort *_port;
@@ -41,6 +44,7 @@
 @property(nonatomic, strong) UILabel *label2;
 
 @property(nonatomic, strong) HotelDetailFilterItemView *itemView;
+@property(nonatomic, strong) BLVerticalSegmentControl *segment;
 
 @end
 
@@ -48,16 +52,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
+//    SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
+//    segment.frame = CGRectMake(20,100, 200, 300);
+//
+//    segment.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
+//    segment.selectionStyle = SMVerticalSegmentedControlSelectionStyleBox;
+//    segment.selectionIndicatorThickness = 0;
+//    segment.selectionBoxBorderWidth = 1;
+//    segment.selectedTextColor = [UIColor colorWithRed:43/255.0 green:156/255.0 blue: 236/255.0 alpha:1.0];
+//    segment.selectionIndicatorColor = [UIColor whiteColor];
+//    segment.selectionBoxBackgroundColorAlpha = 1.0f;
+//    segment.segmentEdgeInset=UIEdgeInsetsZero;
+//    [self.view addSubview:segment];
+    
+    
+    self.segment = [[BLVerticalSegmentControl alloc] initWithFrame:CGRectMake(20,100, 200, 300)
+                                                                          sectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
+    self.segment.backgroundColor = [UIColor yellowColor];
+    [self.segment.selectContentIndex addObject:@(3)];
+    [self.view addSubview:self.segment];
+    
+    /*
     self.itemView = [[HotelDetailFilterItemView alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 40) buttons:@[@"企业付",
-                                                                                                                                                             @"在线付",
-                                                                                                                                                             @"含早餐",
-                                                                                                                                                             @"协议型",
-                                                                                                                                                             @"有窗"]];
-    
+
     [self.view addSubview:self.itemView];
-    
+    */
     /*
     BLRangeSlider *slider = [[BLRangeSlider alloc] initWithFrame:CGRectMake(20, 100, 500, 30)];
     slider.minValue = 0;
@@ -106,8 +127,12 @@
     _p = p;*/
 }
 
+
+
 - (IBAction)insertAction:(id)sender {
-    
+    [self.segment.selectContentIndex addObject:@(0)];
+    [self.segment setNeedsDisplay];
+    /*
    NSArray *arr = @[@"不限",
      @"150以下",
      @"150-300",
@@ -118,7 +143,7 @@
     NSInteger i = arc4random() % 7;
     NSLog(@"%@", arr[i]);
     
-    [self.itemView insertSelectFilterItemWithIndex:0 itemName:arr[i]];
+    [self.itemView insertSelectFilterItemWithIndex:0 itemName:arr[i]];*/
 }
 
 

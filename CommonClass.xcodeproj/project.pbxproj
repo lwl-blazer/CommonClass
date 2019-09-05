@@ -11,6 +11,8 @@
 		2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86421BE367800E76AEF /* ActionSheetViewController.m */; };
 		253F642322FD3C31007E35A8 /* BLRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 253F642122FD3C31007E35A8 /* BLRangeSlider.m */; };
 		254940A2229B8C4C00ABED36 /* BLPingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 254940A1229B8C4C00ABED36 /* BLPingService.m */; };
+		254B15BD231F4E27001391DA /* SMVerticalSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 254B15BB231F4E27001391DA /* SMVerticalSegmentedControl.m */; };
+		254B15C0231F51F1001391DA /* BLVerticalSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */; };
 		8E2B9C39216FA947000A3AD3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B9C38216FA947000A3AD3 /* TableViewController.m */; };
 		8E2B9C3F216FAF71000A3AD3 /* UITableView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */; };
 		8E2C0D3D1F6973160070F93C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C0D3C1F6973160070F93C /* Person.m */; };
@@ -71,6 +73,10 @@
 		253F642222FD3C31007E35A8 /* BLRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLRangeSlider.h; sourceTree = "<group>"; };
 		254940A0229B8C4C00ABED36 /* BLPingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLPingService.h; sourceTree = "<group>"; };
 		254940A1229B8C4C00ABED36 /* BLPingService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLPingService.m; sourceTree = "<group>"; };
+		254B15BB231F4E27001391DA /* SMVerticalSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMVerticalSegmentedControl.m; sourceTree = "<group>"; };
+		254B15BC231F4E27001391DA /* SMVerticalSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVerticalSegmentedControl.h; sourceTree = "<group>"; };
+		254B15BE231F51F1001391DA /* BLVerticalSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLVerticalSegmentControl.h; sourceTree = "<group>"; };
+		254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLVerticalSegmentControl.m; sourceTree = "<group>"; };
 		3F8789454CC29E6F74207F37 /* Pods-CommonClass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonClass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonClass/Pods-CommonClass.debug.xcconfig"; sourceTree = "<group>"; };
 		8E2B9C37216FA947000A3AD3 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		8E2B9C38216FA947000A3AD3 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -165,6 +171,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		254B15BA231F4E27001391DA /* SMVerticalSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				254B15BB231F4E27001391DA /* SMVerticalSegmentedControl.m */,
+				254B15BC231F4E27001391DA /* SMVerticalSegmentedControl.h */,
+			);
+			path = SMVerticalSegmentedControl;
+			sourceTree = "<group>";
+		};
 		5C171E4B82AF57D9BB264B71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +213,7 @@
 		8EF0406B1F505DAA00080748 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				254B15BA231F4E27001391DA /* SMVerticalSegmentedControl */,
 				8EBABCEA2306EC3D003CA4AC /* blue_triangle@2x.png */,
 				8EBABCEB2306EC3D003CA4AC /* blue_triangle@3x.png */,
 				8EBABCE62306EC3C003CA4AC /* HotelDetailFilterItemCell.h */,
@@ -216,6 +232,8 @@
 				8E2D2B982180BA3B00B7823F /* LabelLayer.m */,
 				8E2B9C3E216FAF71000A3AD3 /* UITableView+Placeholder.h */,
 				8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */,
+				254B15BE231F51F1001391DA /* BLVerticalSegmentControl.h */,
+				254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */,
 				8EF0409F1F505DF200080748 /* Extension */,
 				8EF0406F1F505DAA00080748 /* AppDelegate.h */,
 				8EF040701F505DAA00080748 /* AppDelegate.m */,
@@ -485,6 +503,7 @@
 				2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */,
 				8E2C0D401F697A970070F93C /* NSObject+Sum.m in Sources */,
 				8E2C0D461F6982820070F93C /* NSObject+KVO.m in Sources */,
+				254B15BD231F4E27001391DA /* SMVerticalSegmentedControl.m in Sources */,
 				8E2B9C3F216FAF71000A3AD3 /* UITableView+Placeholder.m in Sources */,
 				8E7CA0AA1FAD72F000FBCA2A /* UIView+BLExtention.m in Sources */,
 				8EC37A8D1F58473A006C0983 /* SvTestObject.m in Sources */,
@@ -499,6 +518,7 @@
 				8E2D2B9C2180BA3C00B7823F /* BLCustomActionSheet.m in Sources */,
 				8E2C0D431F697B080070F93C /* SumManager.m in Sources */,
 				253F642322FD3C31007E35A8 /* BLRangeSlider.m in Sources */,
+				254B15C0231F51F1001391DA /* BLVerticalSegmentControl.m in Sources */,
 				8E2D2B9B2180BA3C00B7823F /* LabelLayer.m in Sources */,
 				8EFB62121F72B69B00079133 /* CFRunLoopController.m in Sources */,
 				254940A2229B8C4C00ABED36 /* BLPingService.m in Sources */,
