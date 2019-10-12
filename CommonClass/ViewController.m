@@ -31,6 +31,9 @@
 
 #import "SMVerticalSegmentedControl.h"
 #import "BLVerticalSegmentControl.h"
+#import "ViewController2.h"
+
+#import "LinkedList.h"
 
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
@@ -54,6 +57,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    LinkedList *list = [[LinkedList alloc] init];
+
 //    SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
 //    segment.frame = CGRectMake(20,100, 200, 300);
 //
@@ -130,8 +135,12 @@
 
 
 - (IBAction)insertAction:(id)sender {
-    [self.segment.selectContentIndex addObject:@(0)];
-    [self.segment setNeedsDisplay];
+    
+ 
+    
+    
+//    [self.segment.selectContentIndex addObject:@(0)];
+//    [self.segment setNeedsDisplay];
     /*
    NSArray *arr = @[@"不限",
      @"150以下",
