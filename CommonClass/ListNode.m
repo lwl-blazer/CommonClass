@@ -23,4 +23,12 @@
     return self;
 }
 
+#ifdef DEBUG
+
+- (void)dealloc{
+    NSLog(@"%s---element:%@", __func__, self.element);
+}
+
+#endif
+
 @end

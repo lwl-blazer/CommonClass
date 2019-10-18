@@ -20,11 +20,11 @@ static const NSUInteger ELEMENT_NOT_FOUND = -1;
 - (void)addObject:(nonnull id)element;
 - (void)insertObject:(nonnull id)element index:(NSUInteger)index;
 - (void)removeObject:(id)element;
+- (void)removeObjectAtIndex:(NSUInteger)index;
 
 - (BOOL)isEmpty;
 - (BOOL)contains:(nonnull id)element;
 - (nullable id)objectAtIndex:(NSUInteger)index;
-
 - (NSUInteger)indexOfObject:(nonnull id)element;
 
 @end

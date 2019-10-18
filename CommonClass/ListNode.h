@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ListNode : NSObject
 
-@property(nonatomic, strong) id element;
-@property(nonatomic, strong) ListNode *preNode;
-@property(nonatomic, strong) ListNode *nextNode;
+@property(nonatomic, strong)  id element;
+@property(nonatomic, strong, nullable) ListNode *preNode;
+@property(nonatomic, strong, nullable) ListNode *nextNode;
 
 - (instancetype)initWithElement:(nonnull id)element
                         preNode:(nullable ListNode *)preNode

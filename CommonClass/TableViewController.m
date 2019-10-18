@@ -12,13 +12,14 @@
 
 #import "BLActionSheetViewController.h"
 #import "ActionSheetViewController.h"
+#import "LinkedList.h"
 
 @interface TableViewController ()
 
 @property(nonatomic, copy) NSArray *dataArr;
 
 @property(nonatomic, copy) BLCustomActionSheet *sheet;
-
+@property(nonatomic, strong) LinkedList *list;
 
 @end
 
@@ -36,6 +37,20 @@
     [self.tableView registerClass:[TableViewCell class] forCellReuseIdentifier:@"cell"];
     
     [self.tableView reloadData];
+    
+    self.list = [[LinkedList alloc] init];
+
+    [self.list addObject:@(10)];
+    [self.list addObject:@(20)];
+    [self.list addObject:@(40)];
+    [self.list insertObject:@(30) index:0];
+    [self.list insertObject:@(100) index:0];
+    NSLog(@"%@", self.list);
+
+    NSLog(@"%@", [self.list objectAtIndex:5]);
+    NSLog(@"%d", [self.list contains:@(101)]);
+    NSLog(@"%ld", [self.list indexOfObject:@40]);
+    
 }
 
 - (void)didReceiveMemoryWarning {

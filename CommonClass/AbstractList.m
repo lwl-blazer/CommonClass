@@ -7,6 +7,7 @@
 //
 
 #import "AbstractList.h"
+#import "ListNode.h"
 
 @implementation AbstractList
 
@@ -21,7 +22,17 @@
 }
 
 - (void)clear {
-    
+    ListNode *node = self.headNode;
+    ListNode *tmp = node.nextNode;
+    for (NSUInteger i = 0; i < self.size; i ++) {
+        node.preNode = nil;
+        node.nextNode = nil;
+        node = tmp;
+        tmp = tmp.nextNode;
+    }
+    self.size = 0;
+    self.headNode = NULL;
+    self.lastNode = NULL;
 }
 
 - (BOOL)contains:(nonnull id)element {
@@ -41,6 +52,10 @@
 }
 
 - (void)removeObject:(nonnull id)element {
+    
+}
+
+- (void)removeObjectAtIndex:(NSUInteger)index{
     
 }
 

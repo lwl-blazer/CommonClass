@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @class ListNode;
 @interface AbstractList : NSObject<ListDelegate>
 
-@property(nonatomic, strong) ListNode *headNode;
-@property(nonatomic, strong) ListNode *lastNode;
+@property(nonatomic, strong, nullable) ListNode *headNode;
+@property(nonatomic, strong, nullable) ListNode *lastNode;
 
 - (void)rangeCheck:(NSUInteger)index;
 - (void)rangeCheckForAdd:(NSUInteger)index;

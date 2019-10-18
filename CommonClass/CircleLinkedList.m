@@ -1,15 +1,16 @@
+
 //
-//  LinkedList.m
+//  CircleLinkedList.m
 //  CommonClass
 //
-//  Created by luowailin on 2019/10/12.
+//  Created by luowailin on 2019/10/17.
 //  Copyright © 2019 blazer. All rights reserved.
 //
 
-#import "LinkedList.h"
+#import "CircleLinkedList.h"
 #import "ListNode.h"
 
-@implementation LinkedList
+@implementation CircleLinkedList
 
 #pragma mark -- ListDelegate
 - (BOOL)contains:(nonnull id)element {
@@ -17,7 +18,6 @@
 }
 
 - (NSUInteger)indexOfObject:(nonnull id)element {
-    
     if (self.headNode == NULL) {
         return ELEMENT_NOT_FOUND;
     }
@@ -39,12 +39,13 @@
     if (self.size == index) {
         ListNode *newNode = [[ListNode alloc] initWithElement:element
                                                       preNode:self.lastNode
-                                                     nextNode:NULL];
+                                                     nextNode:self.headNode];
         if (self.lastNode == NULL) { //空链表
             self.headNode = newNode;
-        } else {
-            self.lastNode.nextNode = newNode;
+            self.lastNode = newNode;
         }
+        self.lastNode.nextNode = newNode;
+        self.headNode.preNode = newNode;
         self.lastNode = newNode;
     } else {
         ListNode *nextNode = [self nodeWithIndex:index];
@@ -139,14 +140,12 @@
 - (NSString *)description{
     NSMutableString *strM = [NSMutableString string];
     [strM appendFormat:@"[size=%ld,", self.size];
-
-    
     ListNode *node = self.headNode;
     for (NSUInteger i = 0; i < self.size; i ++) {
         if (i == self.size - 1) {
-            [strM appendFormat:@"%@]", node.element];
+            [strM appendFormat:@"%@_%@]", node.nextNode.element, node.element];
         } else {
-            [strM appendFormat:@"%@,", node.element];
+            [strM appendFormat:@"%@_%@,", node.nextNode.element, node.element];
         }
         node = node.nextNode;
     }
@@ -160,5 +159,6 @@
     NSLog(@"%s", __func__);
 }
 #endif
+
 
 @end

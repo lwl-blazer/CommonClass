@@ -32,8 +32,9 @@
 #import "SMVerticalSegmentedControl.h"
 #import "BLVerticalSegmentControl.h"
 #import "ViewController2.h"
+#import "TableViewController.h"
+#import "ArcView.h"
 
-#import "LinkedList.h"
 
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
@@ -57,8 +58,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    LinkedList *list = [[LinkedList alloc] init];
-
+    ArcView *arc = [[ArcView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:arc];
+    [arc mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(100);
+        make.leading.mas_offset(8);
+        make.trailing.mas_offset(-8);
+        make.height.mas_offset(20);
+    }];
+    
+    
 //    SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
 //    segment.frame = CGRectMake(20,100, 200, 300);
 //
@@ -72,13 +81,13 @@
 //    segment.segmentEdgeInset=UIEdgeInsetsZero;
 //    [self.view addSubview:segment];
     
-    
+    /*
     self.segment = [[BLVerticalSegmentControl alloc] initWithFrame:CGRectMake(20,100, 200, 300)
                                                                           sectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
     self.segment.backgroundColor = [UIColor yellowColor];
     [self.segment.selectContentIndex addObject:@(3)];
     [self.view addSubview:self.segment];
-    
+    */
     /*
     self.itemView = [[HotelDetailFilterItemView alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 40) buttons:@[@"企业付",
 
@@ -136,7 +145,8 @@
 
 - (IBAction)insertAction:(id)sender {
     
- 
+    TableViewController *tableCtn = [[TableViewController alloc] init];
+    [self.navigationController pushViewController:tableCtn animated:YES];
     
     
 //    [self.segment.selectContentIndex addObject:@(0)];
