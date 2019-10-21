@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CircleLinkedList : AbstractList
 
+@property(nonatomic, weak, readonly) ListNode *currentNode;
+
+- (void)currentNodeNext;
+- (void)removeCurrentNodel;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

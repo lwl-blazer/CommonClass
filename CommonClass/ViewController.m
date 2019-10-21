@@ -58,28 +58,18 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    ArcView *arc = [[ArcView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:arc];
-    [arc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(100);
-        make.leading.mas_offset(8);
-        make.trailing.mas_offset(-8);
-        make.height.mas_offset(20);
-    }];
-    
-    
-//    SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
-//    segment.frame = CGRectMake(20,100, 200, 300);
-//
-//    segment.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
-//    segment.selectionStyle = SMVerticalSegmentedControlSelectionStyleBox;
-//    segment.selectionIndicatorThickness = 0;
-//    segment.selectionBoxBorderWidth = 1;
-//    segment.selectedTextColor = [UIColor colorWithRed:43/255.0 green:156/255.0 blue: 236/255.0 alpha:1.0];
-//    segment.selectionIndicatorColor = [UIColor whiteColor];
-//    segment.selectionBoxBackgroundColorAlpha = 1.0f;
-//    segment.segmentEdgeInset=UIEdgeInsetsZero;
-//    [self.view addSubview:segment];
+    SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
+    segment.frame = CGRectMake(20,100, 200, 300);
+
+    segment.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
+    segment.selectionStyle = SMVerticalSegmentedControlSelectionStyleBox;
+    segment.selectionIndicatorThickness = 0;
+    segment.selectionBoxBorderWidth = 1;
+    segment.selectedTextColor = [UIColor colorWithRed:43/255.0 green:156/255.0 blue: 236/255.0 alpha:1.0];
+    segment.selectionIndicatorColor = [UIColor whiteColor];
+    segment.selectionBoxBackgroundColorAlpha = 1.0f;
+    segment.segmentEdgeInset=UIEdgeInsetsZero;
+    [self.view addSubview:segment];
     
     /*
     self.segment = [[BLVerticalSegmentControl alloc] initWithFrame:CGRectMake(20,100, 200, 300)

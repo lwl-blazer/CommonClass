@@ -10,6 +10,12 @@
 #import "CircleLinkedList.h"
 #import "ListNode.h"
 
+@interface CircleLinkedList ()
+
+@property(nonatomic, weak, readwrite) ListNode *currentNode;
+
+@end
+
 @implementation CircleLinkedList
 
 #pragma mark -- ListDelegate
@@ -53,11 +59,10 @@
         ListNode *newNode = [[ListNode alloc] initWithElement:element
                                                       preNode:preNode
                                                      nextNode:nextNode];
-        if (preNode == NULL) {
+        if (index == 0) { //在头节点插入
             self.headNode = newNode;
-        } else {
-            preNode.nextNode = newNode;
         }
+        preNode.nextNode = newNode;
         nextNode.preNode = newNode;
     }
     self.size ++;
@@ -70,48 +75,46 @@
 
 - (void)removeObjectAtIndex:(NSUInteger)index{
     [self rangeCheck:index];
-    
-    ListNode *node = [self nodeWithIndex:index];
-    if (node.preNode) {
-        node.preNode.nextNode = node.nextNode;
-    } else {
-        self.headNode = node.nextNode;
-    }
-    
-    if (node.nextNode) {
-        node.nextNode.preNode = node.preNode;
-    } else {
-        self.lastNode = node.preNode;
-    }
-    self.size --;
+    [self removeNode:[self nodeWithIndex:index]];
 }
 
 - (void)removeObject:(nonnull id)element {
-    ListNode *node = [self nodeWithElement:element];
+    [self removeNode:[self nodeWithElement:element]];
+}
+
+- (void)removeNode:(ListNode *)node{
     if (node == nil) {
         return;
     }
     
-    if (node.preNode) {
-        node.preNode.nextNode = node.nextNode;
+    if (self.size == 1) {
+        node.preNode = NULL;
+        node.nextNode = NULL;
+        self.headNode = NULL;
+        self.lastNode = NULL;
     } else {
-        self.headNode = node.nextNode;
+        node.preNode.nextNode = node.nextNode;
+        node.nextNode.preNode = node.preNode;
+        if ([self.headNode isEqual:node]) {
+            self.headNode = node.nextNode;
+        }
+        
+        if ([self.lastNode isEqual:node]) {
+            self.lastNode = node.preNode;
+        }
     }
     
-    if (node.nextNode) {
-        node.nextNode.preNode = node.preNode;
-    } else {
-        self.lastNode = node.preNode;
-    }
     self.size --;
 }
+
 
 - (ListNode *)nodeWithElement:(id)element{
     if (self.headNode == NULL) {
         return nil;
     }
+    
     ListNode *node = self.headNode;
-    while (node.nextNode) {
+    for (NSInteger i = 0; i < self.size; i ++) {
         if ([node.element isEqual:element]) {
             return node;
         }
@@ -136,6 +139,23 @@
     return node;
 }
 
+- (ListNode *)currentNode{
+    if (_currentNode == NULL) {
+        return self.headNode;
+    }
+    return _currentNode;
+}
+
+- (void)currentNodeNext{
+    self.currentNode = self.currentNode.nextNode;
+}
+
+- (void)removeCurrentNodel{
+    ListNode *tmp = self.currentNode.nextNode;
+    [self removeNode:self.currentNode];
+    self.currentNode = tmp;
+}
+
 #ifdef DEBUG
 - (NSString *)description{
     NSMutableString *strM = [NSMutableString string];
@@ -143,9 +163,9 @@
     ListNode *node = self.headNode;
     for (NSUInteger i = 0; i < self.size; i ++) {
         if (i == self.size - 1) {
-            [strM appendFormat:@"%@_%@]", node.nextNode.element, node.element];
+            [strM appendFormat:@"%@_%@_%@]", node.preNode.element, node.element, node.nextNode.element];
         } else {
-            [strM appendFormat:@"%@_%@,", node.nextNode.element, node.element];
+            [strM appendFormat:@"%@_%@_%@,", node.preNode.element, node.element, node.nextNode.element];
         }
         node = node.nextNode;
     }

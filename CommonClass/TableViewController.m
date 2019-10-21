@@ -13,6 +13,7 @@
 #import "BLActionSheetViewController.h"
 #import "ActionSheetViewController.h"
 #import "LinkedList.h"
+#import "CircleLinkedList.h"
 
 @interface TableViewController ()
 
@@ -20,6 +21,7 @@
 
 @property(nonatomic, copy) BLCustomActionSheet *sheet;
 @property(nonatomic, strong) LinkedList *list;
+@property(nonatomic, strong) CircleLinkedList *circleList;
 
 @end
 
@@ -38,19 +40,27 @@
     
     [self.tableView reloadData];
     
-    self.list = [[LinkedList alloc] init];
-
-    [self.list addObject:@(10)];
-    [self.list addObject:@(20)];
-    [self.list addObject:@(40)];
-    [self.list insertObject:@(30) index:0];
-    [self.list insertObject:@(100) index:0];
-    NSLog(@"%@", self.list);
-
-    NSLog(@"%@", [self.list objectAtIndex:5]);
-    NSLog(@"%d", [self.list contains:@(101)]);
-    NSLog(@"%ld", [self.list indexOfObject:@40]);
+//    self.list = [[LinkedList alloc] init];
     
+    self.circleList = [[CircleLinkedList alloc] init];
+    
+    [self.circleList addObject:@(30)];
+    [self.circleList addObject:@(40)];
+    [self.circleList addObject:@(50)];
+    [self.circleList addObject:@(60)];
+    [self.circleList addObject:@(70)];
+    [self.circleList addObject:@(80)];
+    [self.circleList insertObject:@(20) index:0];
+    [self.circleList insertObject:@(10) index:0]; 
+   
+    NSInteger n = 2;
+    while (self.circleList.size > 1) {
+        for (NSInteger i = 0; i < n; i++) {
+            [self.circleList currentNodeNext];
+        }
+        [self.circleList removeCurrentNodel];
+    }
+    NSLog(@"%@", self.circleList);
 }
 
 - (void)didReceiveMemoryWarning {
