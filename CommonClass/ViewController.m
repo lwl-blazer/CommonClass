@@ -35,6 +35,8 @@
 #import "TableViewController.h"
 #import "ArcView.h"
 
+#import "BinarySearchTree.h"
+
 
 @interface ViewController ()<NSPortDelegate>{
     EOCView *_eocView;
@@ -58,6 +60,20 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    BinarySearchTree *tree = [[BinarySearchTree alloc] initWithCompareBlock:^NSComparisonResult(NSNumber * _Nonnull element1, NSNumber * _Nonnull element2) {
+        return [element1 compare:element2];
+    }];
+    
+    BinarySearchTree *tree1 = [[BinarySearchTree alloc] init];
+    NSArray *arr = @[@7, @4, @9, @2, @5, @8,@11, @3];
+    for (NSNumber *n in arr) {
+        [tree add:n];
+        [tree1 add:[[Person alloc] initWithAge:n.integerValue]];
+    }
+
+    NSLog(@"%@", tree1);
+    
+    /*
     SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
     segment.frame = CGRectMake(20,100, 200, 300);
 
@@ -70,7 +86,7 @@
     segment.selectionBoxBackgroundColorAlpha = 1.0f;
     segment.segmentEdgeInset=UIEdgeInsetsZero;
     [self.view addSubview:segment];
-    
+    */
     /*
     self.segment = [[BLVerticalSegmentControl alloc] initWithFrame:CGRectMake(20,100, 200, 300)
                                                                           sectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];

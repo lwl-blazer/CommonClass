@@ -14,6 +14,7 @@
 		254940A2229B8C4C00ABED36 /* BLPingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 254940A1229B8C4C00ABED36 /* BLPingService.m */; };
 		254B15BD231F4E27001391DA /* SMVerticalSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 254B15BB231F4E27001391DA /* SMVerticalSegmentedControl.m */; };
 		254B15C0231F51F1001391DA /* BLVerticalSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */; };
+		254BEDE0238D22A9001B71CD /* BinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 254BEDDF238D22A9001B71CD /* BinarySearchTree.m */; };
 		25826D5123587953008EC315 /* CircleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 25826D5023587953008EC315 /* CircleLinkedList.m */; };
 		25B583C923332497008D3756 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B583C823332497008D3756 /* ViewController2.m */; };
 		25D60D472351CE8700BBE052 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D60D462351CE8700BBE052 /* LinkedList.m */; };
@@ -85,6 +86,8 @@
 		254B15BC231F4E27001391DA /* SMVerticalSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVerticalSegmentedControl.h; sourceTree = "<group>"; };
 		254B15BE231F51F1001391DA /* BLVerticalSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLVerticalSegmentControl.h; sourceTree = "<group>"; };
 		254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLVerticalSegmentControl.m; sourceTree = "<group>"; };
+		254BEDDE238D22A9001B71CD /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
+		254BEDDF238D22A9001B71CD /* BinarySearchTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinarySearchTree.m; sourceTree = "<group>"; };
 		25826D4F23587953008EC315 /* CircleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleLinkedList.h; sourceTree = "<group>"; };
 		25826D5023587953008EC315 /* CircleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleLinkedList.m; sourceTree = "<group>"; };
 		25B583C723332497008D3756 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
@@ -199,6 +202,15 @@
 			path = SMVerticalSegmentedControl;
 			sourceTree = "<group>";
 		};
+		254BEDDD238D21B9001B71CD /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				254BEDDE238D22A9001B71CD /* BinarySearchTree.h */,
+				254BEDDF238D22A9001B71CD /* BinarySearchTree.m */,
+			);
+			name = BinaryTree;
+			sourceTree = "<group>";
+		};
 		25D60D4B2351CEBA00BBE052 /* LinkList */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +260,7 @@
 		8EF0406B1F505DAA00080748 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				254BEDDD238D21B9001B71CD /* BinaryTree */,
 				25D60D4B2351CEBA00BBE052 /* LinkList */,
 				254B15BA231F4E27001391DA /* SMVerticalSegmentedControl */,
 				8EBABCEA2306EC3D003CA4AC /* blue_triangle@2x.png */,
@@ -276,8 +289,8 @@
 				8EF040721F505DAA00080748 /* ViewController.h */,
 				8EF040731F505DAA00080748 /* ViewController.m */,
 				8E2C0D3B1F6973160070F93C /* Person.h */,
-				8EF040751F505DAA00080748 /* Main.storyboard */,
 				8E2C0D3C1F6973160070F93C /* Person.m */,
+				8EF040751F505DAA00080748 /* Main.storyboard */,
 				8EF040781F505DAA00080748 /* Assets.xcassets */,
 				8EF0407A1F505DAA00080748 /* LaunchScreen.storyboard */,
 				8EF0407D1F505DAA00080748 /* Info.plist */,
@@ -542,6 +555,7 @@
 				25273559235716EA001E554F /* ArcView.m in Sources */,
 				8E38811A1F5711E600D2C636 /* EOCView.m in Sources */,
 				2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */,
+				254BEDE0238D22A9001B71CD /* BinarySearchTree.m in Sources */,
 				8E2C0D401F697A970070F93C /* NSObject+Sum.m in Sources */,
 				8E2C0D461F6982820070F93C /* NSObject+KVO.m in Sources */,
 				254B15BD231F4E27001391DA /* SMVerticalSegmentedControl.m in Sources */,

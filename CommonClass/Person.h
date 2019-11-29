@@ -26,7 +26,8 @@
 //KVO   isa指针伪装指向父类  如果不用属性，如果是成员变量的话，就是观察不到
 @property(nonatomic, copy) NSString *name;
 
+@property(nonatomic, assign) NSInteger age;
 
-
+- (instancetype)initWithAge:(NSInteger)age;
 
 @end
