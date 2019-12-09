@@ -7,36 +7,13 @@
 //
 
 #import "BinarySearchTree.h"
-
-@interface Node : NSObject
-
-@property(nonatomic, strong) id element;
-@property(nonatomic, strong) Node *left;
-@property(nonatomic, strong) Node *right;
-@property(nonatomic, strong) Node *parent;
-
-- (instancetype)initWithEelement:(id)element parent:(Node *)parent;
-
-@end
-
-@implementation Node
-
-- (instancetype)initWithEelement:(id)element parent:(Node *)parent{
-    self = [super init];
-    if (self) {
-        self.element = element;
-        self.parent = parent;
-    }
-    return self;
-}
-
-@end
+#import "TreeNode.h"
 
 @interface BinarySearchTree ()
 
-@property(nonatomic, assign, readwrite) NSUInteger size;
-@property(nonatomic, strong) Node *root;
+
 @property(nonatomic, copy) NSComparisonResult (^compareBlock)(id _Nonnull e1, id _Nonnull e2);
+
 @end
 
 @implementation BinarySearchTree
@@ -47,11 +24,6 @@
         self.compareBlock = compareBlock;
     }
     return self;
-}
-
-
-- (NSUInteger)size{
-    return _size;
 }
 
 - (BOOL)isEmpty{
@@ -68,13 +40,13 @@
     }
     
     if (self.root == nil) {
-        self.root = [[Node alloc] initWithEelement:element parent:nil];
-        _size ++;
+        self.root = [[TreeNode alloc] initWithEelement:element parent:nil];
+        self.size ++;
         return;
     }
     
-    Node *node = self.root;
-    Node *parent = self.root;
+    TreeNode *node = self.root;
+    TreeNode *parent = self.root;
     NSComparisonResult result = NSOrderedAscending;
     
     while (node != nil) {
@@ -92,14 +64,19 @@
         }
     }
     
-    Node *newNode = [[Node alloc] initWithEelement:element
+    TreeNode *newNode = [[TreeNode alloc] initWithEelement:element
                                             parent:parent];
     if (result == NSOrderedDescending) {
         parent.right = newNode;
     } else {
         parent.left = newNode;
     }
-    _size ++;
+    self.size ++;
+    
+    NSArray *arr;
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+    }];
 }
 
 /*

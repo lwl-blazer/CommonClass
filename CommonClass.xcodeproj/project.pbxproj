@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2504EC24239A52FD0095A518 /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504EC23239A52FD0095A518 /* TreeNode.m */; };
+		2504EC2A239A54E40095A518 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504EC29239A54E40095A518 /* BinaryTree.m */; };
+		25095C1B239E4B1000E772C7 /* Queue_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25095C1A239E4B1000E772C7 /* Queue_OC.m */; };
 		2522D86221BE360D00E76AEF /* BLActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */; };
 		2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86421BE367800E76AEF /* ActionSheetViewController.m */; };
 		25273559235716EA001E554F /* ArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25273558235716EA001E554F /* ArcView.m */; };
@@ -72,6 +75,12 @@
 /* Begin PBXFileReference section */
 		1C2D3B214B7E8C43ED161FA4 /* Pods-CommonClass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonClass.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonClass/Pods-CommonClass.release.xcconfig"; sourceTree = "<group>"; };
 		20812FA865D3A42A323ECE04 /* Pods_CommonClass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommonClass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2504EC22239A52FD0095A518 /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		2504EC23239A52FD0095A518 /* TreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeNode.m; sourceTree = "<group>"; };
+		2504EC28239A54E40095A518 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		2504EC29239A54E40095A518 /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
+		25095C19239E4B1000E772C7 /* Queue_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue_OC.h; sourceTree = "<group>"; };
+		25095C1A239E4B1000E772C7 /* Queue_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue_OC.m; sourceTree = "<group>"; };
 		2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLActionSheetViewController.m; sourceTree = "<group>"; };
 		2522D86121BE360D00E76AEF /* BLActionSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLActionSheetViewController.h; sourceTree = "<group>"; };
 		2522D86321BE367800E76AEF /* ActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetViewController.h; sourceTree = "<group>"; };
@@ -193,6 +202,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		25095C18239E4AF500E772C7 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				25095C19239E4B1000E772C7 /* Queue_OC.h */,
+				25095C1A239E4B1000E772C7 /* Queue_OC.m */,
+			);
+			name = Queue;
+			sourceTree = "<group>";
+		};
 		254B15BA231F4E27001391DA /* SMVerticalSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,8 +223,12 @@
 		254BEDDD238D21B9001B71CD /* BinaryTree */ = {
 			isa = PBXGroup;
 			children = (
+				2504EC28239A54E40095A518 /* BinaryTree.h */,
+				2504EC29239A54E40095A518 /* BinaryTree.m */,
 				254BEDDE238D22A9001B71CD /* BinarySearchTree.h */,
 				254BEDDF238D22A9001B71CD /* BinarySearchTree.m */,
+				2504EC22239A52FD0095A518 /* TreeNode.h */,
+				2504EC23239A52FD0095A518 /* TreeNode.m */,
 			);
 			name = BinaryTree;
 			sourceTree = "<group>";
@@ -260,6 +282,7 @@
 		8EF0406B1F505DAA00080748 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				25095C18239E4AF500E772C7 /* Queue */,
 				254BEDDD238D21B9001B71CD /* BinaryTree */,
 				25D60D4B2351CEBA00BBE052 /* LinkList */,
 				254B15BA231F4E27001391DA /* SMVerticalSegmentedControl */,
@@ -562,6 +585,7 @@
 				25D60D4E2351D5A400BBE052 /* ListNode.m in Sources */,
 				8E2B9C3F216FAF71000A3AD3 /* UITableView+Placeholder.m in Sources */,
 				8E7CA0AA1FAD72F000FBCA2A /* UIView+BLExtention.m in Sources */,
+				2504EC2A239A54E40095A518 /* BinaryTree.m in Sources */,
 				25B583C923332497008D3756 /* ViewController2.m in Sources */,
 				8EC37A8D1F58473A006C0983 /* SvTestObject.m in Sources */,
 				25D60D4A2351CEAF00BBE052 /* AbstractList.m in Sources */,
@@ -576,6 +600,7 @@
 				25D60D472351CE8700BBE052 /* LinkedList.m in Sources */,
 				8EF0406E1F505DAA00080748 /* main.m in Sources */,
 				8E2D2B9C2180BA3C00B7823F /* BLCustomActionSheet.m in Sources */,
+				25095C1B239E4B1000E772C7 /* Queue_OC.m in Sources */,
 				8E2C0D431F697B080070F93C /* SumManager.m in Sources */,
 				253F642322FD3C31007E35A8 /* BLRangeSlider.m in Sources */,
 				254B15C0231F51F1001391DA /* BLVerticalSegmentControl.m in Sources */,
@@ -585,6 +610,7 @@
 				8EBABCEC2306EC3D003CA4AC /* HotelDetailFilterItemView.m in Sources */,
 				8E2B9C39216FA947000A3AD3 /* TableViewController.m in Sources */,
 				8EF040A21F505E2900080748 /* UIImage+CommonExtension.m in Sources */,
+				2504EC24239A52FD0095A518 /* TreeNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,8 +71,19 @@
         [tree1 add:[[Person alloc] initWithAge:n.integerValue]];
     }
 
-    NSLog(@"%@", tree1);
     
+//   [tree1 preorderTraversalUsingBlock:^(Person *  _Nonnull object) {
+//        NSLog(@"%ld", object.age);
+//   }];
+    
+//    [tree1 inorderTraversalUsingBlock:^(Person * _Nonnull object) {
+//        NSLog(@"%ld", object.age);
+//    }];
+    
+//    [tree1 postorderTraversalUsingBlock:^(Person * _Nonnull object) {
+//        NSLog(@"%ld", object.age);
+//    }];
+
     /*
     SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
     segment.frame = CGRectMake(20,100, 200, 300);

@@ -7,13 +7,12 @@
 //
 // 二叉搜索树
 
-#import <Foundation/Foundation.h>
+#import "BinaryTree.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BinarySearchTree : NSObject
+@interface BinarySearchTree : BinaryTree
 
-@property(nonatomic, assign, readonly) NSUInteger size;
 /**
  * 关于element的约束
  * 1.实现block方法
