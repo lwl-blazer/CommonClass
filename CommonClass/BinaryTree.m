@@ -8,6 +8,7 @@
 
 #import "BinaryTree.h"
 #import "TreeNode.h"
+#import "Queue_OC.h"
 
 @interface BinaryTree ()
 
@@ -70,9 +71,25 @@
     }
 }
 
-
 - (void)levelOrderTraversalUsingBlock:(void (^)(id _Nonnull))block{
+    Queue_OC *queue = [[Queue_OC alloc] init];
+
+    TreeNode *node = self.root;
+    while (node != nil) {
+        if (block) {
+            block(node.element);
+        }
     
+        if (node.left) {
+            [queue enqueue:node.left];
+        }
+        
+        if (node.right) {
+            [queue enqueue:node.right];
+        }
+        
+        node = [queue dequeue];
+    }
 }
 
 @end

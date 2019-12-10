@@ -84,6 +84,12 @@
 //        NSLog(@"%ld", object.age);
 //    }];
 
+    
+    [tree1 levelOrderTraversalUsingBlock:^(Person *  _Nonnull object) {
+         NSLog(@"%ld", object.age);
+    }];
+    
+    
     /*
     SMVerticalSegmentedControl *segment = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:@[@"时间", @"航空公司", @"出发机场", @"到达机场", @"舱位"]];
     segment.frame = CGRectMake(20,100, 200, 300);
