@@ -10,6 +10,7 @@
 		2504EC24239A52FD0095A518 /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504EC23239A52FD0095A518 /* TreeNode.m */; };
 		2504EC2A239A54E40095A518 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504EC29239A54E40095A518 /* BinaryTree.m */; };
 		25095C1B239E4B1000E772C7 /* Queue_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25095C1A239E4B1000E772C7 /* Queue_OC.m */; };
+		25095D2D23B30C3400E772C7 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 25095D2C23B30C3400E772C7 /* ViewController3.m */; };
 		2522D86221BE360D00E76AEF /* BLActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */; };
 		2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86421BE367800E76AEF /* ActionSheetViewController.m */; };
 		25273559235716EA001E554F /* ArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25273558235716EA001E554F /* ArcView.m */; };
@@ -81,6 +82,8 @@
 		2504EC29239A54E40095A518 /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
 		25095C19239E4B1000E772C7 /* Queue_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue_OC.h; sourceTree = "<group>"; };
 		25095C1A239E4B1000E772C7 /* Queue_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue_OC.m; sourceTree = "<group>"; };
+		25095D2B23B30C3400E772C7 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		25095D2C23B30C3400E772C7 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLActionSheetViewController.m; sourceTree = "<group>"; };
 		2522D86121BE360D00E76AEF /* BLActionSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLActionSheetViewController.h; sourceTree = "<group>"; };
 		2522D86321BE367800E76AEF /* ActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetViewController.h; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				8E2B9C3D216FAF71000A3AD3 /* UITableView+Placeholder.m */,
 				254B15BE231F51F1001391DA /* BLVerticalSegmentControl.h */,
 				254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */,
+				25095D2B23B30C3400E772C7 /* ViewController3.h */,
+				25095D2C23B30C3400E772C7 /* ViewController3.m */,
 				8EF0409F1F505DF200080748 /* Extension */,
 				8EF0406F1F505DAA00080748 /* AppDelegate.h */,
 				8EF040701F505DAA00080748 /* AppDelegate.m */,
@@ -398,7 +403,6 @@
 				8EF040651F505DAA00080748 /* Sources */,
 				8EF040661F505DAA00080748 /* Frameworks */,
 				8EF040671F505DAA00080748 /* Resources */,
-				F06D2892DCEEDA8119C9F24B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -544,28 +548,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F06D2892DCEEDA8119C9F24B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CommonClass/Pods-CommonClass-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommonClass/Pods-CommonClass-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -611,6 +593,7 @@
 				8E2B9C39216FA947000A3AD3 /* TableViewController.m in Sources */,
 				8EF040A21F505E2900080748 /* UIImage+CommonExtension.m in Sources */,
 				2504EC24239A52FD0095A518 /* TreeNode.m in Sources */,
+				25095D2D23B30C3400E772C7 /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

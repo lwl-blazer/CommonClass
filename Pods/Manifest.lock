@@ -1,16 +1,20 @@
 PODS:
-  - Masonry (1.1.0)
+  - UMCAnalytics (6.0.5):
+    - UMCCommon
+  - UMCCommon (2.1.1)
 
 DEPENDENCIES:
-  - Masonry
+  - UMCAnalytics
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Masonry
+  https://github.com/CocoaPods/Specs.git:
+    - UMCAnalytics
+    - UMCCommon
 
 SPEC CHECKSUMS:
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
 
-PODFILE CHECKSUM: c7d505f3b2f1c388446881a98cc79574f6350146
+PODFILE CHECKSUM: 10bad65ed12fdd31538477add8d0c2c3d92615d6
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.0

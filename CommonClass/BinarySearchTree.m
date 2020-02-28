@@ -11,7 +11,6 @@
 
 @interface BinarySearchTree ()
 
-
 @property(nonatomic, copy) NSComparisonResult (^compareBlock)(id _Nonnull e1, id _Nonnull e2);
 
 @end
