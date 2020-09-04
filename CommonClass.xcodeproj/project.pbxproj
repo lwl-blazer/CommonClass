@@ -11,6 +11,7 @@
 		2504EC2A239A54E40095A518 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504EC29239A54E40095A518 /* BinaryTree.m */; };
 		25095C1B239E4B1000E772C7 /* Queue_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25095C1A239E4B1000E772C7 /* Queue_OC.m */; };
 		25095D2D23B30C3400E772C7 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 25095D2C23B30C3400E772C7 /* ViewController3.m */; };
+		250D76D525007E6800DB27AE /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 250D76D425007E6800DB27AE /* ViewController4.m */; };
 		2522D86221BE360D00E76AEF /* BLActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */; };
 		2522D86521BE367800E76AEF /* ActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2522D86421BE367800E76AEF /* ActionSheetViewController.m */; };
 		25273559235716EA001E554F /* ArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25273558235716EA001E554F /* ArcView.m */; };
@@ -84,6 +85,8 @@
 		25095C1A239E4B1000E772C7 /* Queue_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Queue_OC.m; sourceTree = "<group>"; };
 		25095D2B23B30C3400E772C7 /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		25095D2C23B30C3400E772C7 /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		250D76D325007E6800DB27AE /* ViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController4.h; sourceTree = "<group>"; };
+		250D76D425007E6800DB27AE /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		2522D86021BE360D00E76AEF /* BLActionSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLActionSheetViewController.m; sourceTree = "<group>"; };
 		2522D86121BE360D00E76AEF /* BLActionSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLActionSheetViewController.h; sourceTree = "<group>"; };
 		2522D86321BE367800E76AEF /* ActionSheetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetViewController.h; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				254B15BF231F51F1001391DA /* BLVerticalSegmentControl.m */,
 				25095D2B23B30C3400E772C7 /* ViewController3.h */,
 				25095D2C23B30C3400E772C7 /* ViewController3.m */,
+				250D76D325007E6800DB27AE /* ViewController4.h */,
+				250D76D425007E6800DB27AE /* ViewController4.m */,
 				8EF0409F1F505DF200080748 /* Extension */,
 				8EF0406F1F505DAA00080748 /* AppDelegate.h */,
 				8EF040701F505DAA00080748 /* AppDelegate.m */,
@@ -403,6 +408,7 @@
 				8EF040651F505DAA00080748 /* Sources */,
 				8EF040661F505DAA00080748 /* Frameworks */,
 				8EF040671F505DAA00080748 /* Resources */,
+				900A9D18D53546DDCCE31502 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -526,6 +532,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		900A9D18D53546DDCCE31502 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CommonClass/Pods-CommonClass-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CommonClass/Pods-CommonClass-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2B3FE6B88F35E3138681B4E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +612,7 @@
 				8E2C0D431F697B080070F93C /* SumManager.m in Sources */,
 				253F642322FD3C31007E35A8 /* BLRangeSlider.m in Sources */,
 				254B15C0231F51F1001391DA /* BLVerticalSegmentControl.m in Sources */,
+				250D76D525007E6800DB27AE /* ViewController4.m in Sources */,
 				8E2D2B9B2180BA3C00B7823F /* LabelLayer.m in Sources */,
 				8EFB62121F72B69B00079133 /* CFRunLoopController.m in Sources */,
 				254940A2229B8C4C00ABED36 /* BLPingService.m in Sources */,
